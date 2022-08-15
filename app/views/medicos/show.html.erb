@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @medico %>
+
+<h4>Agenda do médico:</h4>
+
+<%for consultum in @medico.consultums %>
+  <p>
+    <strong>Paciente:</strong>
+    <%= consultum.paciente.nome%>
+  </p>
+
+  <p>
+    <strong>Data:</strong>
+    <%= consultum.data %>
+  </p>
+
+  <p>
+    <strong>Horario:</strong>
+    <%= consultum.horario %>
+  </p>
+  <p>
+    __________________
+  </p>
+  <% end %>
+
+<div>
+  <%= link_to "Edit this medico", edit_medico_path(@medico) %> |
+  <%= link_to "Back to medicos", medicos_path %>
+  <%= button_to "Destroy this medico", @medico, method: :delete %>
+</div>

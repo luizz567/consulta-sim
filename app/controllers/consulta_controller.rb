@@ -22,8 +22,8 @@ class ConsultaController < ApplicationController
   # POST /consulta or /consulta.json
   def create
     @consultum = Consultum.new(consultum_params)
-    @medico = Medico.find_by(consultum_params[:medico_id])
-    @paciente = Paciente.find_by(consultum_params[:paciente_id])
+    @medico = Medico.find(consultum_params[:medico_id])
+    @paciente = Paciente.find(consultum_params[:paciente_id])
     @medico.consultums << @consultum
     @paciente.consultums << @consultum
 

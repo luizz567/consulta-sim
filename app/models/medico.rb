@@ -1,5 +1,6 @@
 class Medico < ApplicationRecord
   has_many :consultums, dependent: :destroy
+  has_many :pacientes, through: :consultums
 
   #validações
   validates :nome, :cpf, :email, :especialidade, :crm, presence:true

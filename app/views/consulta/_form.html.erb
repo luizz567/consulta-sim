@@ -23,13 +23,14 @@
 
   <div>
     <%= form.label :paciente_id, style: "display: block" %>
-    <%= collection_select(:consultum, :paciente_id, Paciente.all, :id, :nome, prompt: true)%>
+    <%= collection_select(:consultum, :paciente_id, Paciente.all, :id, :nome, {:selected => @consultum.paciente_id})%>
   </div>
 
   <div>
     <%= form.label :medico_id, style: "display: block" %>
-    <%= collection_select(:consultum, :medico_id, Medico.all, :id, :nome, prompt: true)%>
+    <%= form.collection_select(:medico_id, Medico.all, :id, :nome, {:selected => @consultum.medico_id}) %>
   </div>
+
 
   <div>
     <%= form.submit %>

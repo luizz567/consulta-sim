@@ -6,7 +6,7 @@
   <% @medicos.each do |medico| %>
     <%= render medico %>
     <p>
-      <%= link_to "Show this medico", medico %>
+      <%= link_to "Show this medico", medico,id:medico.crm %>
     </p>
   <% end %>
 </div>
